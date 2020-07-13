@@ -4,14 +4,24 @@ let calculateNum = 0 // 按下運算鍵後，將前一個數字存入
 let realNum = 0 // 按下數字鍵存入
 
 function show(num) {
-    document.querySelector('.result').innerText = num // 將傳入的參數顯示於畫面上
+    if (num !== num) {
+        document.querySelector('.result').innerText = '0.' // 預防一開始直接按小數點出現ＮaN
+    } else {
+        document.querySelector('.result').innerText = num // 將傳入的參數顯示於畫面上(數字)
+    }
 }
 
 function showTheNumOut(inputNum) {
-    visibleNum += inputNum // 傳入的數字不斷累積 visibleNum（字串）
-    realNum = parseFloat(visibleNum, 10) // 將累積的 visibleNum（字串）轉為數字
-    show(realNum) // 將數字 realNum 顯示於畫面上
-    return
+    if (inputNum === '.' || inputNum === '0') {
+        // 輸入零及.的時候顯示的是字串
+        visibleNum += inputNum
+        show(visibleNum) // 將字串顯示於螢幕上
+    } else {
+        visibleNum += inputNum // 傳入的數字不斷累積 visibleNum（字串）
+        realNum = parseFloat(visibleNum, 10) // 將累積的 visibleNum（字串)，在按下數字1~9的瞬間將字串轉成數字
+        show(realNum) // 將數字 realNum 顯示於畫面上
+        return
+    }
 }
 
 function AC() {
