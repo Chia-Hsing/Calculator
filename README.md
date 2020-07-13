@@ -6,7 +6,7 @@ A calculator with basic functions, which can help people do more complex calcula
 
 | Features             | Detail                                            |
 | :------------------: | ------------------------------------------------- |
-| calculations | do some easy calculations like add, subtract, multiply and divide.</br>capable of doing decimal floating point arithmetic |
+| calculations | do some easy calculations like add, subtract, multiply and divide.</br>capable of doing decimal floating point arithmetic. |
 
 ## Web Display
 
